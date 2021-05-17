@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvShow;
     DatePicker dp;
     TimePicker tp;
+    EditText etName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
         btnReset=findViewById(R.id.btnReset);
         dp=findViewById(R.id.dp);
         tvShow=findViewById(R.id.tvShow);
+        etName=findViewById(R.id.etName);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"Reservation has been set!",Toast.LENGTH_LONG).show();
-                String date ="Reservation for "+dp.getDayOfMonth() + "/"+(dp.getMonth()+1)+"/"+dp.getYear() +" "+"\n"+ + tp.getCurrentHour()+":"+tp.getCurrentMinute();
+                String date ="Reservation for "+dp.getDayOfMonth() + "/"+(dp.getMonth()+1)+"/"+dp.getYear() +" "+"\n"+ " "+ tp.getCurrentHour()+":"+tp.getCurrentMinute();
 
                 tvShow.setText(date);
             }
